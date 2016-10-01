@@ -15,17 +15,18 @@
  */
 package org.openmastery.dictionary;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import lombok.Delegate;
+import org.openmastery.dictionary.api.RandomApiBuilderSupport;
+import org.openmastery.testsupport.RandomGenerator;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class DictionaryApplicationTests {
+public class ARandom {
 
-	@Test
-	public void contextLoads() {
-	}
+	public static final ARandom aRandom = new ARandom();
+
+	@Delegate
+	private RandomApiBuilderSupport randomApiBuilderSupport = new RandomApiBuilderSupport();
+
+	@Delegate
+	private RandomGenerator randomGenerator = new RandomGenerator();
 
 }

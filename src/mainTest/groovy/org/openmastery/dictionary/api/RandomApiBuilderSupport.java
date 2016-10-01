@@ -13,19 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.openmastery.dictionary;
+package org.openmastery.dictionary.api;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+public class RandomApiBuilderSupport {
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class DictionaryApplicationTests {
-
-	@Test
-	public void contextLoads() {
+	public RandomEntryBuilder newEntry() {
+		return new RandomEntryBuilder();
 	}
 
 }

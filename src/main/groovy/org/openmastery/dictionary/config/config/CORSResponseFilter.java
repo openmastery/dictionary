@@ -13,19 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.openmastery.dictionary;
+package org.openmastery.dictionary.config.config;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import javax.ws.rs.container.ContainerRequestContext;
+import javax.ws.rs.container.ContainerResponseContext;
+import javax.ws.rs.container.ContainerResponseFilter;
+import javax.ws.rs.ext.Provider;
+import java.io.IOException;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class DictionaryApplicationTests {
+@Provider
+public class CORSResponseFilter implements ContainerResponseFilter {
 
-	@Test
-	public void contextLoads() {
-	}
-
+		@Override
+		public void filter(ContainerRequestContext request,
+						   ContainerResponseContext response) throws IOException {
+			response.getHeaders().add("Access-Control-Allow-Origin", "*");
+		}
 }

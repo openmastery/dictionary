@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2016 New Iron Group, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,19 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.openmastery.dictionary;
+package org.openmastery.dictionary.api
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import static org.openmastery.dictionary.ARandom.aRandom
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class DictionaryApplicationTests {
+class RandomEntryBuilder extends Entry.EntryBuilder {
 
-	@Test
-	public void contextLoads() {
+	RandomEntryBuilder() {
+		super.name(aRandom.text(10))
+				.description(org.openmastery.publisher.ARandom.aRandom.optionalText(50))
 	}
 
 }

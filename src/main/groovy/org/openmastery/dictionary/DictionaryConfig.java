@@ -15,17 +15,17 @@
  */
 package org.openmastery.dictionary;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.boot.actuate.autoconfigure.ManagementWebSecurityAutoConfiguration;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class DictionaryApplicationTests {
-
-	@Test
-	public void contextLoads() {
-	}
+@SpringBootApplication
+@ComponentScan("org.openmastery.dictionary")
+@EnableAutoConfiguration(exclude = {
+		SecurityAutoConfiguration.class,
+		ManagementWebSecurityAutoConfiguration.class})
+public class DictionaryConfig {
 
 }

@@ -13,19 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.openmastery.dictionary;
+package org.openmastery.dictionary.api;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Builder;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class DictionaryApplicationTests {
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Entry {
 
-	@Test
-	public void contextLoads() {
-	}
+	private String hashtag;
+	private String description;
 
 }
