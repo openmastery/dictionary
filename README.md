@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/openmastery/dictionary.svg?branch=master)](https://travis-ci.org/openmastery/dictionary)
+
 # dictionary
 
 ## Heroku
