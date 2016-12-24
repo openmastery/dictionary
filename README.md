@@ -12,11 +12,11 @@ Log into heroku
 
 Create the heroku application
 
-`heroku create openmastery-dictionary`
+`heroku create om-storyweb`
 
 Or, if the application has already been created, initialize the remote
 
-`heroku git:remote -a openmastery-dictionary`
+`heroku git:remote -a om-storyweb`
 
 Create the database (can upgrade to hobby-basic just by associating credit card w/ account)
 
